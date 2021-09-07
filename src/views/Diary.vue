@@ -1,5 +1,5 @@
 <template>
-    <!--====children 라우트====-->
+    <!--====children 라우트(diary/detail, update, write)====-->
     <router-view></router-view>
 </template>
 <script>

@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
-import DiaryList from '../components/diary/DiaryList.vue'
-import Write from '../components/diary/DiaryWrite.vue'
-import Diary from '../components/diary/Diary.vue'
-import DiaryDetailByNo from '../components/diary/DiaryDetail.vue'
-import DiaryUpdateByNo from '../components/diary/DiaryUpdateByNo.vue'
+import DiaryList from '../views/DiaryList.vue'
+import Write from '../views/DiaryWrite.vue'
+import Diary from '../views/Diary.vue'
+import DiaryDetailByNo from '../views/DiaryDetail.vue'
+import DiaryUpdateByNo from '../views/DiaryUpdateByNo.vue'
 import store from '../store'
 
 Vue.use(VueRouter);
-
 
 const routes = [
   {
@@ -22,7 +21,7 @@ const routes = [
     name: 'diary',
     component: Diary,
     children: [
-      { path: 'write', name: 'Write', component: Write, meta: { auth: true,}, },
+      { path: 'write', name: 'DiaryWrite', component: Write, meta: { auth: true,}, },
       { path: 'list', name: 'DiaryList', component: DiaryList, meta: { auth: true,},},
       { path: 'detail/:no', name: 'DiaryDetailByNo', component: DiaryDetailByNo, meta: { auth: true,}, },
       { path: 'update/:no', name: 'DiaryUpdateByNo', component: DiaryUpdateByNo, meta: { auth: true,},},

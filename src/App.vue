@@ -3,16 +3,31 @@
 <template>
   <div id="app">
     <!-- Header : 로고, 로그인 시 사용자이름과 로그아웃버튼 --> 
-    <Header></Header>
-    <router-view />
+    <layout-component>
+      <template v-slot:header>
+      </template>
+      <router-view />
+      <!-- <chart-component></chart-component> -->
+    </layout-component>
   </div>
 </template>
 <script>
-import Header from './components/common/Header.vue'
+import Layout from './components/common/Layout.vue'
+// import Chart from './components/diary/chartTest.vue'
 
 export default ({
   components: {
-    Header
+   'layout-component': Layout,
+  //  'chart-component' : Chart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        series: [{
+          data: [1,2,3] 
+        }]
+      }
+    }
   }
 })
 </script>
